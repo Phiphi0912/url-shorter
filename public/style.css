@@ -1,0 +1,10 @@
+body {
+  background-color: turquoise;
+}
+
+img {
+  flex: 1;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
