@@ -1,7 +1,7 @@
 const uppercaseLetter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const lowercaseLetter = uppercaseLetter.toLocaleLowerCase()
 const number = '1234567890'
-const collection = uppercaseLetter + lowercaseLetter + number
+const collection = (uppercaseLetter + lowercaseLetter + number).split('')
 const checkCollection = []
 
 function shortenURL() {
