@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const url = require('../../models/url')
+const shortenURL = require('../../shortenURL')
 
 router.post('/submit', (req, res) => {
   const originalURL = req.body.url
@@ -12,6 +13,7 @@ router.post('/submit', (req, res) => {
         const shortURL = shortenURL()
         url.create({ originalURL, shortURL })
           .then(() => res.render('show', { originalURL, shortURL }))
+          .catch(error => console.log(error))
       } else {
         res.render('show', { originalURL, shortURL: shortener[0].shortURL })
       }
