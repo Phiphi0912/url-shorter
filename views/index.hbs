@@ -1,10 +1,24 @@
 <div class="container">
-  <form action="/shorten/submit" method="post">
+  <form action="/shorten/submit" method="post" class="needs-validation" id="form" novalidate>
     <div class="row g-3">
       <div class="col-sm-9 mx-auto">
-        <input type="url" name="url" class="form-control mt-2" placeholder="Import URL Here">
+        <input type="url" name="url" class="form-control mt-2" placeholder="Import URL Here" required>
+        <div class="invalid-feedback">
+          Please check your URL
+        </div>
       </div>
     </div>
     <button class="btn btn-outline-primary btn-lg mt-3 px-5" type="submit">Shorten</button>
   </form>
 </div>
+
+<script>
+  const form = document.querySelector('#form')
+  form.addEventListener('submit', function () {
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      form.classList.add('was-validated')
+    }
+  })
+</script>
