@@ -11,7 +11,7 @@ function shortenURL() {
     result += collection[randomIndex]
   }
   checkResults(result)
-  return 'http://' + result
+  return result
 }
 
 function checkResults(result) {
