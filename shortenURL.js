@@ -14,6 +14,7 @@ function shortenURL() {
   return result
 }
 
+// 檢查是否會產生相同的亂數
 function checkResults(result) {
   if (checkCollection.forEach(item => item === result)) {
     return shortenURL()
