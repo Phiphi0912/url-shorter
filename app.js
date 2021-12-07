@@ -15,6 +15,13 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(routes)
 
+app.use((err, req, res, next) => {
+  console.error(err)
+  const statusCode = err.statusCode || 500
+  return res.status(statusCode)
+    .render('error', { statusCode, message: 'Something wrong, please try again' })
+})
+
 
 app.listen(port, () => {
   console.log(`http://localhost:${port} is running`)

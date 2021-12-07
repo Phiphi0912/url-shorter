@@ -3,7 +3,7 @@ const router = express.Router()
 const url = require('../../models/url')
 const shortenURL = require('../../shortenURL')
 
-router.post('/submit', (req, res) => {
+router.post('/submit', (req, res, next) => {
   const originalURL = req.body.url.trim()
   const randomCode = shortenURL()
   if (!originalURL) return
@@ -20,7 +20,7 @@ router.post('/submit', (req, res) => {
         res.render('show', { originalURL, shortURL: shortener[0].shortURL }) // 輸入相同網址時，直接從資料庫拿出來時，而此時拿出會是陣列，所以需要[0]
       }
     })
-    .catch(error => console.log(error))
+    .catch(next)
 })
 
 
