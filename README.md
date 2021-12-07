@@ -2,9 +2,9 @@
 A tool that can help you convert the original URL into a short URL. You can directly click the short URL provided on the screen, or click the copy button to copy the short URL
 
 ### Home
-![Homepage](/public/image/homepage.PNG)
+![Homepage](/public/pictures/homepage.PNG)
 ### Shorten
-![Homepage](/public/image/shortener.PNG)
+![Homepage](/public/pictures/shortener.PNG)
 
 ## 功能
 - Users can convert the original URL to a short URL
